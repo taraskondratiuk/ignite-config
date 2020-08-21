@@ -28,16 +28,4 @@
     <import resource="example-default.xml"/>
 
     <bean parent="ignite.cfg"/>
-<bean class="org.apache.ignite.configuration.IgniteConfiguration">
-  <property name="cacheConfiguration">
-    <list>
-      <bean class="org.apache.ignite.configuration.CacheConfiguration">
-        <property name="name" value="test-cache"/>
-      
-        <!-- Enabling statistics for this specific cache. -->
-        <property name="statisticsEnabled" value="true"/>
-      </bean>
-    </list>
-  </property>
-</bean>
 </beans>
