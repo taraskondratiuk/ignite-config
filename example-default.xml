@@ -29,6 +29,7 @@
     <bean abstract="true" id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
         <!-- Set to true to enable distributed class loading for examples, default is false. -->
         <property name="peerClassLoadingEnabled" value="true"/>
+        <property name="statisticsEnabled" value="true"/>
 
         <!-- Enable task execution events for examples. -->
         <property name="includeEventTypes">
@@ -70,17 +71,5 @@
                 </property>
             </bean>
         </property>
-
-  <property name="cacheConfiguration">
-    <list>
-      <bean class="org.apache.ignite.configuration.CacheConfiguration">
-        <property name="name" value="review-cache-st-proj"/>
-      
-        <!-- Enabling statistics for this specific cache. -->
-        <property name="statisticsEnabled" value="true"/>
-      </bean>
-    </list>
-  </property>
-
     </bean>
 </beans>
