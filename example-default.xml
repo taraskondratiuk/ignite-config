@@ -29,7 +29,7 @@
     <bean id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
         <!-- Set to true to enable distributed class loading for examples, default is false. -->
         <property name="peerClassLoadingEnabled" value="true"/>
-        <property name="workindDirectory" value="C://tmp/"/>
+        <property name="workDirectory" value="C://tmp/"/>
         <!-- Enable task execution events for examples. -->
         <property name="includeEventTypes">
             <list>
