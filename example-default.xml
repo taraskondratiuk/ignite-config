@@ -26,10 +26,24 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
-    <bean id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
+    <bean abstract="true" id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
+
+    <property name="failureHandler">
+        <bean class="org.apache.ignite.failure.NoOpFailureHandler">
+          
+          <!-- uncomment to enable this handler to 
+           process critical workers' hung-ups -->
+          <!--property name="ignoredFailureTypes">
+            <list>
+            </list>
+          </property-->
+         
+      </bean>
+            
+    </property>
         <!-- Set to true to enable distributed class loading for examples, default is false. -->
         <property name="peerClassLoadingEnabled" value="true"/>
-        <property name="workDirectory" value="C://tmp/"/>
+
         <!-- Enable task execution events for examples. -->
         <property name="includeEventTypes">
             <list>
